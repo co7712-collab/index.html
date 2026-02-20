@@ -3,86 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PERT Pro 2026</title>
+    <title>PERT-Response Pro | Protocolo 2026</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.281.0/lucide.min.js"></script>
     <style>
-        :root { --primary: #1a73e8; --danger: #d93025; --success: #188038; --bg: #f8f9fa; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); margin: 0; padding: 15px; color: #202124; }
-        .header { text-align: center; padding: 20px 0; background: white; border-radius: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); margin-bottom: 20px; border-bottom: 4px solid var(--primary); }
-        h1 { margin: 0; font-size: 24px; color: var(--primary); letter-spacing: -0.5px; }
-        .tagline { font-size: 12px; color: #5f6368; font-weight: bold; text-transform: uppercase; }
-        .section { background: white; border-radius: 16px; padding: 16px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
-        h2 { font-size: 16px; margin-top: 0; color: #3c4043; display: flex; align-items: center; gap: 8px; }
-        .btn-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-        .btn { border: none; border-radius: 10px; padding: 12px; font-size: 13px; font-weight: 600; cursor: pointer; text-align: center; transition: 0.2s; background: #f1f3f4; color: #3c4043; }
-        .btn-active { background: var(--primary); color: white; }
-        .btn-danger { background: #fce8e6; color: var(--danger); }
-        .data-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #f1f3f4; font-size: 14px; }
-        .data-row:last-child { border: 0; }
-        .value { font-weight: 700; color: var(--danger); }
-        .alert-box { background: #feefc3; border-radius: 10px; padding: 12px; font-size: 13px; color: #665200; margin-top: 10px; }
-        .tab-bar { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 10px; }
-        .tab { white-space: nowrap; padding: 8px 16px; border-radius: 20px; background: #e8f0fe; color: var(--primary); font-size: 13px; font-weight: 600; }
-        .kpi { color: var(--success); font-weight: bold; }
+        :root {
+            --bg: #0f172a;
+            --card: #1e293b;
+            --primary: #3b82f6;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --success: #10b981;
+            --text: #f8fafc;
+            --text-dim: #94a3b8;
+        }
+        body {
+            font-family: -apple-system, system-ui, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 15px;
+            line-height: 1.5;
+        }
+        .header {
+            text-align: center;
+            padding: 20px 0;
+            border-bottom: 1px solid #334155;
+            margin-bottom: 20px;
+        }
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        .badge-danger { background: rgba(239, 68, 68, 0.2); color: var(--danger); border: 1px solid var(--danger); }
+        
+        .section-title {
+            font-size: 1.1rem;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 25px 0 15px 0;
+        }
+        .card {
+            background: var(--card);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 15px;
+            border: 1px solid #334155;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            margin-top: 10px;
+        }
+        th, td {
+            text-align: left;
+            padding: 10px;
+            border-bottom: 1px solid #334155;
+        }
+        th { color: var(--text-dim); font-weight: 500; }
+        .highlight { color: var(--warning); font-weight: bold; }
+        .dose-tag {
+            background: #334155;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
     </style>
 </head>
 <body>
 
-    <div class="header">
-        <span class="tagline">Soporte Decisión Clínica AHA/ACC 2026</span>
-        <h1>🛡️ PERT-Response Pro</h1>
-    </div>
+<div class="header">
+    <div class="badge badge-danger">Uso Clínico Exclusivo</div>
+    <h1 style="margin:0; font-size: 1.5rem;">PERT-Response Pro</h1>
+    <p style="color: var(--text-dim); margin: 5px 0 0 0; font-size: 0.9rem;">Protocolo de Respuesta Rápida en TEP</p>
+</div>
 
-    <div class="section">
-        <h2>📊 Clasificación Dinámica (A-E)</h2>
-        <div class="btn-grid">
-            <button class="btn">A: Incidental</button>
-            <button class="btn">B: Bajo Riesgo</button>
-            <button class="btn">C: Riesgo Intermedio</button>
-            <button class="btn btn-danger">D/E: CRÍTICO (PERT)</button>
-        </div>
-        <div class="alert-box"><strong>Tríada H-B-D:</strong> Evaluar Hipotensión, Biomarcadores (+) y Disfunción VD.</div>
-    </div>
+<div class="section-title">🔍 Hallazgos Críticos Angio-TC</div>
+<div class="card">
+    <table>
+        <tr>
+            <td>Relación VD/VI</td>
+            <td class="highlight">≥ 1.0</td>
+        </tr>
+        <tr>
+            <td>Septum IV</td>
+            <td>Aplanamiento / Inversión</td>
+        </tr>
+        <tr>
+            <td>Vena Cava</td>
+            <td>Reflujo hacia VCI/Hepáticas</td>
+        </tr>
+        <tr>
+            <td>Art. Pulmonar</td>
+            <td>Diámetro > 30 mm (Tronco)</td>
+        </tr>
+    </table>
+</div>
 
-    <div class="section">
-        <h2>🫀 Criterios de Disfunción (VD)</h2>
-        <div class="data-row"><span>Relación VD/VI (TC/Eco)</span><span class="value">≥ 1.0</span></div>
-        <div class="data-row"><span>TAPSE (Ecocardiograma)</span><span class="value">< 17 mm</span></div>
-        <div class="data-row"><span>Onda S' Tisular</span><span class="value">< 9.5 cm/s</span></div>
-        <div class="data-row"><span>Tronco Arteria Pulmonar</span><span class="value">> 30 mm</span></div>
-    </div>
+<div class="section-title">⚡ Protocolo de Reperfusión</div>
+<div class="card">
+    <p style="margin-top:0; font-weight:bold; color:var(--danger);">Alteplasa (rtPA):</p>
+    <ul style="padding-left: 20px; font-size: 0.85rem; margin: 0;">
+        <li><b>Dosis Estándar:</b> 100 mg infusión en 2 horas.</li>
+        <li><b>Dosis "Safe-Dose":</b> 50 mg (Riesgo Intermedio-Alto).</li>
+        <li><b>Paro Inminente:</b> 0.6 mg/kg bolo (máx 50mg) en 15 min.</li>
+    </ul>
+</div>
 
-    <div class="section">
-        <h2>⚠️ Cribado de Trombólisis</h2>
-        <div class="data-row"><span>¿Cirugía mayor < 14 días?</span><span class="value">SI/NO</span></div>
-        <div class="data-row"><span>¿Ictus isquémico < 6 meses?</span><span class="value">SI/NO</span></div>
-        <p style="font-size: 12px; color: #5f6368;">* Si hay contraindicación: <strong>Trombectomía Mecánica prioritaria.</strong></p>
-    </div>
+<div class="section-title">💊 Terapia Oral (DOACs)</div>
+<div class="card">
+    <table>
+        <thead>
+            <tr>
+                <th>Fármaco</th>
+                <th>Inicio / Carga</th>
+                <th>Mantenimiento</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><b>Apixabán</b></td>
+                <td class="highlight">10 mg c/12h<br><small>(7 días)</small></td>
+                <td>5 mg c/12h</td>
+            </tr>
+            <tr>
+                <td><b>Rivaroxabán</b></td>
+                <td class="highlight">15 mg c/12h<br><small>(21 días)</small></td>
+                <td>20 mg c/día</td>
+            </tr>
+            <tr>
+                <td><b>Dabigatrán</b></td>
+                <td>Tras 5 días de Heparina</td>
+                <td>150 mg c/12h</td>
+            </tr>
+            <tr>
+                <td><b>Edoxabán</b></td>
+                <td>Tras 5 días de Heparina</td>
+                <td>60 mg c/día</td>
+            </tr>
+        </tbody>
+    </table>
+    <p style="font-size: 0.75rem; color: var(--warning); margin-top: 15px; border-top: 1px solid #334155; padding-top: 10px;">
+        ⚠️ <b>Contraindicaciones:</b> CrCl < 15-30 ml/min, Embarazo, Síndrome Antifosfolípido (SAF) Triple Positivo, Prótesis Valvular Mecánica.
+    </p>
+</div>
 
-    <div class="section">
-        <h2>💊 Protocolo DOAC (2026)</h2>
-        <p><strong>Inicio Directo (Monoterapia):</strong></p>
-        <div class="btn-grid">
-            <button class="btn">Apixabán: 10mg/12h (7d)</button>
-            <button class="btn">Rivaroxabán: 15mg/12h (21d)</button>
-        </div>
-        <p><strong>Con HBPM Previa (5-10 días):</strong></p>
-        <div class="btn-grid">
-            <button class="btn">Dabigatrán: 150mg/12h</button>
-            <button class="btn">Edoxabán: 60mg/día</button>
-        </div>
-    </div>
+<div class="section-title">🏠 Criterios de Manejo Ambulatorio</div>
+<div class="card">
+    <ul style="padding-left: 20px; font-size: 0.85rem; margin: 0;">
+        <li>PESI simplificado = 0</li>
+        <li>Estabilidad hemodinámica y Saturación > 94%</li>
+        <li>Ausencia de disfunción VD en TAC/ECO</li>
+        <li>Soporte social y acceso a medicación</li>
+    </ul>
+</div>
 
-    <div class="section">
-        <h2>⏱️ Tiempos Meta (KPIs)</h2>
-        <div class="data-row"><span>Puerta a Angio-TC</span><span class="kpi">< 60 min</span></div>
-        <div class="data-row"><span>Activación a PERT Team</span><span class="kpi">< 20 min</span></div>
-        <div class="data-row"><span>Decisión a Reperfusión</span><span class="kpi">< 60 min</span></div>
-    </div>
-
-    <div style="text-align: center; font-size: 10px; color: #9aa0a6; padding-bottom: 20px;">
-        Este es un prototipo de soporte de decisión clínica institucional. <br>
-        Basado en Guía AHA/ACC 2026.
-    </div>
+<footer style="text-align:center; padding: 20px; color: var(--text-dim); font-size: 0.7rem;">
+    Actualizado: Guías 2024-2026 | No reemplaza el juicio clínico.
+</footer>
 
 </body>
 </html>
