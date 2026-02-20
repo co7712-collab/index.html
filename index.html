@@ -18,76 +18,24 @@
         }
         body { font-family: -apple-system, system-ui, sans-serif; background-color: var(--bg); color: var(--text); margin: 0; padding: 15px; line-height: 1.4; }
         .header { text-align: center; padding: 15px 0; border-bottom: 2px solid var(--primary); margin-bottom: 15px; }
+        
+        /* NEMOTECNIA HBD */
+        .hbd-container { display: flex; justify-content: space-between; gap: 8px; margin-bottom: 20px; }
+        .hbd-box { flex: 1; background: #1e293b; border: 1px solid var(--primary); border-radius: 10px; padding: 10px; text-align: center; }
+        .hbd-letter { font-size: 1.5rem; font-weight: bold; color: var(--primary); display: block; }
+        .hbd-text { font-size: 0.65rem; color: var(--text-dim); text-transform: uppercase; }
+
+        .semaforo-container { display: grid; gap: 8px; margin-bottom: 20px; }
+        .semaforo-card { padding: 10px; border-radius: 8px; border-left: 5px solid; background: var(--card); font-size: 0.85rem; }
+        .alto { border-color: var(--danger); }
+        .intermedio { border-color: var(--warning); }
+        .bajo { border-color: var(--success); }
+
         .section-title { font-size: 0.9rem; color: var(--primary); margin: 18px 0 8px 0; text-transform: uppercase; font-weight: bold; display: flex; align-items: center; gap: 8px; border-left: 3px solid var(--primary); padding-left: 10px; }
         .card { background: var(--card); border-radius: 10px; padding: 12px; margin-bottom: 10px; border: 1px solid #334155; }
+        
         table { width: 100%; border-collapse: collapse; font-size: 0.8rem; }
-        th, td { text-align: left; padding: 6px; border-bottom: 1px solid #334155; }
+        th, td { text-align: left; padding: 8px; border-bottom: 1px solid #334155; }
         .highlight { color: var(--warning); font-weight: bold; }
-        .eco-tip { border-left: 2px solid var(--success); padding-left: 10px; margin-bottom: 8px; font-size: 0.85rem; }
-        .warning-box { background: rgba(245, 158, 11, 0.1); border: 1px dashed var(--warning); padding: 10px; border-radius: 8px; font-size: 0.8rem; margin-top: 5px; }
-    </style>
-</head>
-<body>
-
-<div class="header">
-    <h1 style="margin:0; font-size: 1.3rem;">PERT-Response Pro</h1>
-    <span style="font-size: 0.7rem; color: var(--text-dim);">PROTOCOLO DE RESPUESTA AVANZADA 2026</span>
-</div>
-
-<div class="section-title" style="color: var(--success);">🫀 Tips Ecocardiográficos (Soporte VD)</div>
-<div class="card" style="border-color: var(--success);">
-    <div class="eco-tip">
-        <b>Signo de McConnell:</b> Aquinesia de la pared libre del VD con contractilidad preservada del ápex.
-    </div>
-    <div class="eco-tip">
-        <b>TAPSE < 17 mm:</b> Marcador clave de disfunción sistólica del ventrículo derecho.
-    </div>
-    <div class="eco-tip">
-        <b>Signo de la "D":</b> El VD sobrecargado aplana el septum e invade el VI (Eje corto).
-    </div>
-    <div class="eco-tip">
-        <b>Vena Cava Inferior:</b> Dilatada (> 2.1 cm) con colapso inspiratorio disminuido (< 50%).
-    </div>
-</div>
-
-<div class="section-title">🔍 Hallazgos en Angio-TC</div>
-<div class="card">
-    <table>
-        <tr><td>Relación VD/VI</td><td class="highlight">≥ 1.0</td></tr>
-        <tr><td>Arteria Pulmonar</td><td>Diámetro > 30 mm</td></tr>
-        <tr><td>Reflujo Cava</td><td>Contraste en venas hepáticas</td></tr>
-    </table>
-</div>
-
-<div class="section-title" style="color: var(--accent);">🛠️ Terapia Invasiva (PERT-Advanced)</div>
-<div class="card" style="border-color: var(--accent);">
-    <div style="font-size: 0.8rem;">
-        • <b>Trombectomía Mecánica:</b> Opción 1A en contraindicación de rTPA.<br>
-        • <b>ECMO VA:</b> Shock obstructivo con fallo cardiaco derecho in extremis.
-    </div>
-</div>
-
-<div class="section-title">💊 Transición Segura a DOACs</div>
-<div class="card">
-    <table>
-        <tr><td><b>Apixabán</b></td><td>10mg c/12h (7 días) → 5mg c/12h</td></tr>
-        <tr><td><b>Rivaroxabán</b></td><td>15mg c/12h (21 días) → 20mg/día</td></tr>
-        <tr style="background: rgba(139, 92, 246, 0.1);">
-            <td><b style="color:var(--accent)">Dabigatrán</b></td>
-            <td><b>150mg c/12h</b> tras 5 días de Heparina</td>
-        </tr>
-    </table>
-
-    <div class="warning-box">
-        <b>⚠️ Inicio de Dabigatrán:</b><br>
-        • Post-HBPM (Clexane): En la hora de la siguiente dosis.<br>
-        • Post-HNF (Bomba): Inmediatamente al apagar la infusión.
-    </div>
-</div>
-
-<footer style="text-align:center; padding: 15px; color: var(--text-dim); font-size: 0.65rem;">
-    © 2026 Protocolo PERT | Soporte de Decisión Médica.
-</footer>
-
-</body>
-</html>
+        
+        .warning-box { background: rgba(245, 158, 11, 0.1); border: 1px dashed var(--warning); padding:
