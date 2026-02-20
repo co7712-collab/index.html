@@ -3,93 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PERT-Response Pro | 2026</title>
+    <title>PERT-Response Pro | SCAI-Shock 2026</title>
     <style>
         :root { --bg: #0f172a; --card: #1e293b; --primary: #3b82f6; --danger: #ef4444; --warning: #f59e0b; --success: #10b981; --accent: #8b5cf6; --text: #f8fafc; --text-dim: #94a3b8; }
         body { font-family: -apple-system, system-ui, sans-serif; background-color: var(--bg); color: var(--text); margin: 0; padding: 15px; line-height: 1.4; }
-        .header { text-align: center; padding: 15px 0; border-bottom: 2px solid var(--primary); margin-bottom: 15px; }
+        .header { text-align: center; padding: 10px 0; border-bottom: 2px solid var(--primary); margin-bottom: 15px; }
         
-        /* NEMOTECNIA HBD */
-        .hbd-container { display: flex; justify-content: space-between; gap: 8px; margin-bottom: 15px; }
-        .hbd-box { flex: 1; background: #1e293b; border: 1px solid var(--primary); border-radius: 10px; padding: 8px; text-align: center; }
-        .hbd-letter { font-size: 1.4rem; font-weight: bold; color: var(--primary); display: block; }
-        .hbd-text { font-size: 0.55rem; color: var(--text-dim); text-transform: uppercase; }
+        /* ESCALA SCAI CON LABS */
+        .scai-container { display: grid; gap: 5px; margin-bottom: 15px; }
+        .scai-card { padding: 8px 12px; border-radius: 6px; border-left: 5px solid; background: var(--card); font-size: 0.75rem; display: flex; justify-content: space-between; align-items: center; }
+        .scai-a { border-color: var(--success); }
+        .scai-b { border-color: #a3e635; }
+        .scai-c { border-color: var(--warning); }
+        .scai-d { border-color: #f97316; }
+        .scai-e { border-color: var(--danger); }
+        .lactato { font-weight: bold; font-size: 0.7rem; color: var(--warning); }
 
-        .semaforo-card { padding: 10px; border-radius: 8px; border-left: 5px solid; background: var(--card); font-size: 0.85rem; margin-bottom: 8px; }
-        .alto { border-color: var(--danger); }
-        .intermedio { border-color: var(--warning); }
-
-        .section-title { font-size: 0.85rem; color: var(--primary); margin: 15px 0 8px 0; text-transform: uppercase; font-weight: bold; border-left: 3px solid var(--primary); padding-left: 10px; display: flex; align-items: center; gap: 5px; }
+        .section-title { font-size: 0.8rem; color: var(--primary); margin: 15px 0 8px 0; text-transform: uppercase; font-weight: bold; border-left: 3px solid var(--primary); padding-left: 10px; }
         .card { background: var(--card); border-radius: 10px; padding: 12px; margin-bottom: 10px; border: 1px solid #334155; }
         
-        table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
-        td { padding: 8px; border-bottom: 1px solid #334155; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.8rem; }
+        td { padding: 6px; border-bottom: 1px solid #334155; }
         .highlight { color: var(--warning); font-weight: bold; }
         
+        .alert-btn { background: var(--danger); color: white; text-align: center; padding: 12px; border-radius: 8px; font-weight: bold; text-decoration: none; display: block; margin-top: 20px; box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4); text-transform: uppercase; letter-spacing: 1px; }
         .footer { text-align: center; padding: 20px; color: var(--text-dim); font-size: 0.6rem; }
     </style>
 </head>
 <body>
 
 <div class="header">
-    <h1 style="margin:0; font-size: 1.3rem;">PERT-Response Pro</h1>
-    <span style="font-size: 0.7rem; color: var(--text-dim);">MNEMOTECNIA H-B-D</span>
+    <h1 style="margin:0; font-size: 1.2rem;">PERT-Response Pro</h1>
+    <span style="font-size: 0.65rem; color: var(--text-dim);">ESTADIFICACIÓN SCAI & PROTOCOLO MULTIMODAL</span>
 </div>
 
-<div class="hbd-container">
-    <div class="hbd-box"><span class="hbd-letter">H</span><span class="hbd-text">Hipotensión</span></div>
-    <div class="hbd-box"><span class="hbd-letter">B</span><span class="hbd-text">Biomarcadores</span></div>
-    <div class="hbd-box"><span class="hbd-letter">D</span><span class="hbd-text">Disfunción</span></div>
+<div class="section-title">🚦 ESTADIFICACIÓN SCAI SHOCK</div>
+<div class="scai-container">
+    <div class="scai-card scai-a"><span><b>A</b> At Risk (Estable)</span> <span class="lactato">Lac < 2</span></div>
+    <div class="scai-card scai-b"><span><b>B</b> Beginning (Compensado)</span> <span class="lactato">Lac < 2</span></div>
+    <div class="scai-card scai-c"><span><b>C</b> Classic (Hipoperfusión)</span> <span class="lactato">Lac 2-5</span></div>
+    <div class="scai-card scai-d"><span><b>D1</b> Deterioro (Falla Terapia)</span> <span class="lactato">Lac > 5</span></div>
+    <div class="scai-card scai-d" style="background:rgba(249, 115, 22, 0.1)"><span><b>D2</b> Distrés (Falla Orgánica)</span> <span class="lactato">pH < 7.2</span></div>
+    <div class="scai-card scai-e"><span><b>E</b> Extremis (Colapso/PCR)</span> <span class="lactato">pH < 7.0</span></div>
 </div>
 
-<div class="semaforo-card alto"><b>ALTO (H+):</b> Inestable. PAS < 90.</div>
-<div class="semaforo-card intermedio"><b>INTERMEDIO (B+/D+):</b> Estable con sobrecarga.</div>
-
-<div class="section-title">🔍 Hallazgos en Angio-TC</div>
-<div class="card" style="border-color: var(--primary);">
-    <table>
-        <tr>
-            <td><b>Relación VD/VI</b></td>
-            <td class="highlight">≥ 1.0</td>
-        </tr>
-        <tr>
-            <td><b>Septum IV</b></td>
-            <td>Aplanado / Invertido</td>
-        </tr>
-        <tr>
-            <td><b>Arteria Pulmonar</b></td>
-            <td>Diámetro > 30 mm</td>
-        </tr>
-        <tr>
-            <td><b>Vena Cava Inf.</b></td>
-            <td>Reflujo de Contraste</td>
-        </tr>
-    </table>
-</div>
-
-<div class="section-title" style="color: var(--success);">🫀 Tips Ecocardio (POCUS)</div>
-<div class="card" style="border-color: var(--success); font-size: 0.8rem;">
-    • <b>McConnell:</b> Aquinesia pared libre (Ápex OK).<br>
-    • <b>TAPSE:</b> < 17 mm (Disfunción VD).<br>
-    • <b>VCI:</b> > 2.1 cm sin colapso inspiratorio.
-</div>
-
-<div class="section-title" style="color: var(--accent);">🛠️ Terapia Invasiva</div>
-<div class="card" style="border-color: var(--accent); font-size: 0.8rem;">
-    • <b>Trombectomía:</b> Falla/contraindicación rTPA.<br>
-    • <b>ECMO V-A:</b> Shock refractario o PCR.
-</div>
-
-<div class="section-title">💊 Transición DOACs</div>
+<div class="section-title">🔍 HALLAZGOS CRÍTICOS ANGIO-TC</div>
 <div class="card">
-    <table style="font-size: 0.8rem;">
-        <tr><td><b>Apixabán</b></td><td>10mg/12h (7d) → 5mg/12h</td></tr>
-        <tr><td><b>Rivaroxabán</b></td><td>15mg/12h (21d) → 20mg/d</td></tr>
-        <tr style="background:rgba(139,92,246,0.1)"><td><b>Dabigatrán</b></td><td><b>150mg/12h</b> (Post-Hep 5d)</td></tr>
+    <table>
+        <tr><td>Relación VD/VI</td><td class="highlight">≥ 1.0 (Disfunción)</td></tr>
+        <tr><td>Septum Interventricular</td><td>Aplanado o Invertido</td></tr>
+        <tr><td>Arteria Pulmonar</td><td>Diámetro > 30 mm</td></tr>
+        <tr><td>Reflujo Cava</td><td>Contraste en Venas Hepáticas</td></tr>
     </table>
 </div>
 
-<div class="footer">© 2026 Protocolo Digital PERT</div>
+<div class="section-title" style="color: var(--success);">🫀 ECOCARDIOGRAMA (POCUS)</div>
+<div class="card" style="border-color: var(--success); font-size: 0.75rem;">
+    • <b>McConnell:</b> Aquinesia pared libre VD (Ápex preservado).<br>
+    • <b>TAPSE:</b> < 17 mm (Disfunción sistólica VD).<br>
+    • <b>Vena Cava:</b> > 2.1 cm con colapso inspiratorio < 50%.
+</div>
 
-</body>
-</html>
+<div class="section-title" style="color: var(--accent);">🛠️ MANEJO PERT-ADVANCED</div>
+<div class="card" style="border-color: var(--accent); font-size: 0.75rem;">
+    • <b>SCAI C/D1:</b> Trombólisis o Trombectomía Mecánica.<br>
+    • <b>SCAI D2/E:</b> Soporte con ECMO V-A Inmediato.
+</div>
+
+<div class="section-title">💊 TRANSICIÓN Y DOACS</div>
+<div class="card">
+    <table style="font-size: 0.75rem;">
+        <tr><td><b>Dabigatrán (Standard)</b></td><td>150 mg c/12h</td></tr>
+        <tr><td><b>Ajuste (>80 años)</b></td><td>110 mg c/12h</td></tr>
+    </table>
+    <div style="font-size: 0.7rem; color: var(--warning); border-top: 1px solid #334155; margin-top: 8px; padding
