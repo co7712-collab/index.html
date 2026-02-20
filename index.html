@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PERT-Response Pro | Protocolo 2026</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.281.0/lucide.min.js"></script>
     <style>
         :root {
             --bg: #0f172a;
@@ -13,6 +12,7 @@
             --danger: #ef4444;
             --warning: #f59e0b;
             --success: #10b981;
+            --accent: #8b5cf6;
             --text: #f8fafc;
             --text-dim: #94a3b8;
         }
@@ -22,151 +22,119 @@
             color: var(--text);
             margin: 0;
             padding: 15px;
-            line-height: 1.5;
+            line-height: 1.4;
         }
         .header {
             text-align: center;
-            padding: 20px 0;
-            border-bottom: 1px solid #334155;
-            margin-bottom: 20px;
+            padding: 15px 0;
+            border-bottom: 2px solid var(--primary);
+            margin-bottom: 15px;
         }
         .badge {
             display: inline-block;
             padding: 4px 12px;
             border-radius: 20px;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             font-weight: bold;
             text-transform: uppercase;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
         }
         .badge-danger { background: rgba(239, 68, 68, 0.2); color: var(--danger); border: 1px solid var(--danger); }
         
+        .semaforo-container { display: grid; gap: 8px; margin-bottom: 20px; }
+        .semaforo-card {
+            padding: 10px;
+            border-radius: 8px;
+            border-left: 5px solid;
+            background: var(--card);
+        }
+        .alto { border-color: var(--danger); }
+        .intermedio { border-color: var(--warning); }
+        .bajo { border-color: var(--success); }
+        
         .section-title {
-            font-size: 1.1rem;
+            font-size: 0.9rem;
             color: var(--primary);
+            margin: 18px 0 8px 0;
+            text-transform: uppercase;
+            font-weight: bold;
             display: flex;
             align-items: center;
-            gap: 10px;
-            margin: 25px 0 15px 0;
+            gap: 8px;
         }
         .card {
             background: var(--card);
-            border-radius: 12px;
-            padding: 16px;
-            margin-bottom: 15px;
+            border-radius: 10px;
+            padding: 12px;
+            margin-bottom: 10px;
             border: 1px solid #334155;
         }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.85rem;
-            margin-top: 10px;
-        }
-        th, td {
-            text-align: left;
-            padding: 10px;
-            border-bottom: 1px solid #334155;
-        }
-        th { color: var(--text-dim); font-weight: 500; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.8rem; }
+        th, td { text-align: left; padding: 6px; border-bottom: 1px solid #334155; }
         .highlight { color: var(--warning); font-weight: bold; }
-        .dose-tag {
-            background: #334155;
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-family: monospace;
-        }
+        .inv-item { margin-bottom: 5px; padding-left: 10px; border-left: 2px solid var(--accent); }
     </style>
 </head>
 <body>
 
 <div class="header">
-    <div class="badge badge-danger">Uso Clínico Exclusivo</div>
-    <h1 style="margin:0; font-size: 1.5rem;">PERT-Response Pro</h1>
-    <p style="color: var(--text-dim); margin: 5px 0 0 0; font-size: 0.9rem;">Protocolo de Respuesta Rápida en TEP</p>
+    <div class="badge badge-danger">PERT Team Network</div>
+    <h1 style="margin:0; font-size: 1.3rem;">PERT-Response Pro</h1>
 </div>
 
-<div class="section-title">🔍 Hallazgos Críticos Angio-TC</div>
+<div class="section-title">🚦 Clasificación de Riesgo</div>
+<div class="semaforo-container">
+    <div class="semaforo-card alto">
+        <b style="color:var(--danger)">ALTO (Inestable):</b> PAS < 90 mmHg o Shock.
+    </div>
+    <div class="semaforo-card intermedio">
+        <b style="color:var(--warning)">INTERMEDIO:</b> Estable + VD (+) + Troponina (+).
+    </div>
+    <div class="semaforo-card bajo">
+        <b style="color:var(--success)">BAJO:</b> Estable sin signos de sobrecarga VD.
+    </div>
+</div>
+
+<div class="section-title">🔍 Marcadores de Carga (Angio-TC)</div>
 <div class="card">
     <table>
-        <tr>
-            <td>Relación VD/VI</td>
-            <td class="highlight">≥ 1.0</td>
-        </tr>
-        <tr>
-            <td>Septum IV</td>
-            <td>Aplanamiento / Inversión</td>
-        </tr>
-        <tr>
-            <td>Vena Cava</td>
-            <td>Reflujo hacia VCI/Hepáticas</td>
-        </tr>
-        <tr>
-            <td>Art. Pulmonar</td>
-            <td>Diámetro > 30 mm (Tronco)</td>
-        </tr>
+        <tr><td>Relación VD/VI</td><td class="highlight">≥ 1.0</td></tr>
+        <tr><td>Septum IV</td><td>Aplanado o Paradojal</td></tr>
+        <tr><td>Vena Cava Inf.</td><td>Reflujo de contraste</td></tr>
     </table>
 </div>
 
-<div class="section-title">⚡ Protocolo de Reperfusión</div>
+<div class="section-title">💉 Terapia Médica (Reperfusión)</div>
 <div class="card">
-    <p style="margin-top:0; font-weight:bold; color:var(--danger);">Alteplasa (rtPA):</p>
-    <ul style="padding-left: 20px; font-size: 0.85rem; margin: 0;">
-        <li><b>Dosis Estándar:</b> 100 mg infusión en 2 horas.</li>
-        <li><b>Dosis "Safe-Dose":</b> 50 mg (Riesgo Intermedio-Alto).</li>
-        <li><b>Paro Inminente:</b> 0.6 mg/kg bolo (máx 50mg) en 15 min.</li>
-    </ul>
+    <div style="font-size: 0.8rem;">
+        <b>rTPA (Alteplasa):</b> 100mg (2h) o 50mg (Riesgo Int-Alto).<br>
+        <b>Tenecteplasa (TNK):</b> Dosis por peso (si disponible).
+    </div>
 </div>
 
-<div class="section-title">💊 Terapia Oral (DOACs)</div>
+<div class="section-title" style="color: var(--accent);">🛠️ Terapia Invasiva (PERT-Advanced)</div>
+<div class="card" style="border-color: var(--accent);">
+    <div class="inv-item">
+        <b style="color: var(--accent);">Trombectomía Mecánica:</b><br>
+        <span style="font-size: 0.8rem;">Indicada si hay contraindicación de fibrinolíticos o falla de los mismos.</span>
+    </div>
+    <div class="inv-item" style="margin-top:8px;">
+        <b style="color: var(--accent);">Soporte Avanzado:</b><br>
+        <span style="font-size: 0.8rem;">ECMO VA en shock refractario o PCR. Embolectomía quirúrgica si falla el catéter.</span>
+    </div>
+</div>
+
+<div class="section-title">💊 Esquema DOACs</div>
 <div class="card">
     <table>
-        <thead>
-            <tr>
-                <th>Fármaco</th>
-                <th>Inicio / Carga</th>
-                <th>Mantenimiento</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><b>Apixabán</b></td>
-                <td class="highlight">10 mg c/12h<br><small>(7 días)</small></td>
-                <td>5 mg c/12h</td>
-            </tr>
-            <tr>
-                <td><b>Rivaroxabán</b></td>
-                <td class="highlight">15 mg c/12h<br><small>(21 días)</small></td>
-                <td>20 mg c/día</td>
-            </tr>
-            <tr>
-                <td><b>Dabigatrán</b></td>
-                <td>Tras 5 días de Heparina</td>
-                <td>150 mg c/12h</td>
-            </tr>
-            <tr>
-                <td><b>Edoxabán</b></td>
-                <td>Tras 5 días de Heparina</td>
-                <td>60 mg c/día</td>
-            </tr>
-        </tbody>
+        <tr><td><b>Apixabán</b></td><td>10mg c/12h (7d) → 5mg c/12h</td></tr>
+        <tr><td><b>Rivaroxabán</b></td><td>15mg c/12h (21d) → 20mg/día</td></tr>
+        <tr><td><b>Dabigatrán</b></td><td>150mg c/12h (Post-Heparina)</td></tr>
     </table>
-    <p style="font-size: 0.75rem; color: var(--warning); margin-top: 15px; border-top: 1px solid #334155; padding-top: 10px;">
-        ⚠️ <b>Contraindicaciones:</b> CrCl < 15-30 ml/min, Embarazo, Síndrome Antifosfolípido (SAF) Triple Positivo, Prótesis Valvular Mecánica.
-    </p>
 </div>
 
-<div class="section-title">🏠 Criterios de Manejo Ambulatorio</div>
-<div class="card">
-    <ul style="padding-left: 20px; font-size: 0.85rem; margin: 0;">
-        <li>PESI simplificado = 0</li>
-        <li>Estabilidad hemodinámica y Saturación > 94%</li>
-        <li>Ausencia de disfunción VD en TAC/ECO</li>
-        <li>Soporte social y acceso a medicación</li>
-    </ul>
-</div>
-
-<footer style="text-align:center; padding: 20px; color: var(--text-dim); font-size: 0.7rem;">
-    Actualizado: Guías 2024-2026 | No reemplaza el juicio clínico.
+<footer style="text-align:center; padding: 15px; color: var(--text-dim); font-size: 0.6rem;">
+    © 2026 Protocolo Digital PERT - Soporte en Tiempo Real.
 </footer>
 
 </body>
