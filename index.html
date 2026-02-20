@@ -5,37 +5,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PERT-Response Pro | Protocolo 2026</title>
     <style>
-        :root {
-            --bg: #0f172a;
-            --card: #1e293b;
-            --primary: #3b82f6;
-            --danger: #ef4444;
-            --warning: #f59e0b;
-            --success: #10b981;
-            --accent: #8b5cf6;
-            --text: #f8fafc;
-            --text-dim: #94a3b8;
-        }
+        :root { --bg: #0f172a; --card: #1e293b; --primary: #3b82f6; --danger: #ef4444; --warning: #f59e0b; --success: #10b981; --accent: #8b5cf6; --text: #f8fafc; --text-dim: #94a3b8; }
         body { font-family: -apple-system, system-ui, sans-serif; background-color: var(--bg); color: var(--text); margin: 0; padding: 15px; line-height: 1.4; }
         .header { text-align: center; padding: 15px 0; border-bottom: 2px solid var(--primary); margin-bottom: 15px; }
-        
-        /* NEMOTECNIA HBD */
         .hbd-container { display: flex; justify-content: space-between; gap: 8px; margin-bottom: 20px; }
         .hbd-box { flex: 1; background: #1e293b; border: 1px solid var(--primary); border-radius: 10px; padding: 10px; text-align: center; }
         .hbd-letter { font-size: 1.5rem; font-weight: bold; color: var(--primary); display: block; }
         .hbd-text { font-size: 0.65rem; color: var(--text-dim); text-transform: uppercase; }
-
         .semaforo-container { display: grid; gap: 8px; margin-bottom: 20px; }
         .semaforo-card { padding: 10px; border-radius: 8px; border-left: 5px solid; background: var(--card); font-size: 0.85rem; }
         .alto { border-color: var(--danger); }
         .intermedio { border-color: var(--warning); }
         .bajo { border-color: var(--success); }
-
         .section-title { font-size: 0.9rem; color: var(--primary); margin: 18px 0 8px 0; text-transform: uppercase; font-weight: bold; display: flex; align-items: center; gap: 8px; border-left: 3px solid var(--primary); padding-left: 10px; }
         .card { background: var(--card); border-radius: 10px; padding: 12px; margin-bottom: 10px; border: 1px solid #334155; }
-        
         table { width: 100%; border-collapse: collapse; font-size: 0.8rem; }
         th, td { text-align: left; padding: 8px; border-bottom: 1px solid #334155; }
         .highlight { color: var(--warning); font-weight: bold; }
-        
-        .warning-box { background: rgba(245, 158, 11, 0.1); border: 1px dashed var(--warning); padding:
+        .warning-box { background: rgba(245, 158, 11, 0.1); border: 1px dashed var(--warning); padding: 10px; border-radius: 8px; font-size: 0.75rem; margin-top: 10px; }
+        footer { text-align: center; padding: 20px; color: var(--text-dim); font-size: 0.65rem; }
+    </style>
+</head>
+<body>
+<div class="header">
+    <h1 style="margin:0; font-size: 1.4rem;">PERT-Response Pro</h1>
+    <span style="font-size: 0.75rem; color: var(--text-dim);">PROTOCOLOS DE ALTA PRECISIÓN 2026</span>
+</div>
+<div class="hbd-container">
+    <div class="hbd-box"><span class="hbd-letter">H</span><span class="hbd-text">Hipotensión</span></div>
+    <div class="hbd-box"><span class="hbd-letter">B</span><span class="hbd-text">Biomarcadores</span></div>
+    <div class="hbd-box"><span class="hbd-letter">D</span><span class="hbd-text">Disfunción VD</span></div>
+</div>
+<div class="semaforo-container">
+    <div class="semaforo-card alto"><b style="color:var(--danger)">ALTO (H+):</b> PAS < 90 mmHg. ¡Trombólisis!</div>
+    <div class="semaforo-card intermedio"><b style="color:var(--warning)">INTERMEDIO (B+ y D+):</b> Estable con Troponina (+) y Eco/TAC (+).</div>
+    <div class="semaforo-card bajo"><b style="color:var(--success)">BAJO (H- B- D-):</b> Todo negativo. Alta precoz.</div>
+</div>
+<div class="section-title" style="color: var(--success);">🫀 Ecocardiograma (POCUS)</div>
+<div class="card" style="border-color: var(--success); font-size: 0.8rem;">
+    • <b>McConnell (+)</b>: Aquinesia pared libre VD.<br>
+    • <b>TAPSE < 17 mm</b>: Disfunción sistólica VD.<br>
+    • <b>Vena Cava > 2.1 cm</b>: Sin colapso inspiratorio.
+</div>
+<div class="section-title" style="color: var(--accent);">🛠️ Terapia Invasiva</div>
+<div class="card" style="border-color: var(--accent); font-size: 0.8rem;">
+    • <b>Trombectomía Mecánica:</b> Falla o contraindicación de rTPA.<br>
+    • <b>ECMO V-A:</b> Shock refractario o Paro presenciado.
+</div>
+<div class="section-title">💊 Transición DOACs</div>
+<div class="card">
+    <table>
+        <tr><td><b>Apixabán</b></td><td>10mg c/12h (7d) → 5mg c/12h</td></tr>
+        <tr><td><b>Rivaroxabán</b></td><td>15mg c/12h (21d) → 20mg/día</td></tr>
+        <tr style="background: rgba(139, 92, 246, 0.1);"><td><b style="color:var(--accent)">Dabigatrán</b></td><td><b>150mg c/12h</b> (Post-Heparina 5d)</td></tr>
+    </table>
+    <div class="warning-box">
+        <b>Transición a Dabigatrán:</b><br>
+        • Si viene de <b>HBPM</b>: En la hora de la siguiente dosis.<br>
+        • Si viene de <b>HNF (Bomba)</b>: Al apagar la infusión.
+    </div>
+</div>
+<footer>© 2026 Protocolo PERT Digital</footer>
+</body>
+</html>
